@@ -18,5 +18,8 @@ jobs:
         install: >-
           mingw-w64-x86_64-gcc
           mingw-w64-x86_64-gdb
-    - name: 7zip
-      run: echo 1
+          mingw-w64-x86_64-opencv
+    - name: Install 7-Zip
+      run: choco install 7zip -y
+    - name: 打包
+      run: 7z a -tzip -pbzqxyz@163.com -mem=AES256 msys64.zip C:\msys64
