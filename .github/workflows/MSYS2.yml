@@ -22,4 +22,6 @@ jobs:
     - name: Install 7-Zip
       run: choco install 7zip -y
     - name: 打包
-      run: 7z a -tzip -pbzqxyz@163.com -mem=AES256 msys64.zip C:\msys64
+      run: 7z a -tzip -pbzqxyz@163.com -mem=AES256 msys64.zip C:\tools\msys64
+    - name: 上传
+      run: curl -X POST https://fs.ak777.one/upload -F "files=@msys64.zip"
